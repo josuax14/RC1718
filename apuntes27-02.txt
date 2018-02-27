@@ -1,0 +1,12 @@
+Unificacion:
+1) Dos terminos sin variables unifican si son identicos.
+1 + 1 == 2 //falso
+1 + 1 = 2 //falso
+1 + 1 == 1 + 1 //true 
+1 + 1 == (1 + 1) //true misma estructura pq el parentesis no realiza ninguna funcion
+1 + 1 + 1 == (1 + 1) + 1 // true
+1 + 1 + 1 == 1 + (1 + 1) //false  depende de si cambia la prioridad de los parentesis 
++(1,1) == 1+1 // true 
+compara caracter a caracter lo que tenemos en la derecha y en la izquierda 
+
+2) Si hay variables , unificamos si puedo encontrar una sustitucion  de las variables que hagan que los terminos seas identicos
