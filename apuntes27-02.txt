@@ -10,3 +10,18 @@ Unificacion:
 compara caracter a caracter lo que tenemos en la derecha y en la izquierda 
 
 2) Si hay variables , unificamos si puedo encontrar una sustitucion  de las variables que hagan que los terminos seas identicos
+x = 1
+x=1,x=2 //false
+x= mujer(maria) // si lo traga 
+x = 1+1 // no unifica se queda en 1+1 y no 2
+x = 2+x // tb pasa lo mismo caso muy raro*
+[x,y,z,t] = [1,2,3,4] // si unifica asocia cada hueco con cada uno tienen que ser del mismo tamaño
+
+3) is -> x is 1+1
+2 is 1+1 //true
+3 is 1+1 //false
+x is 1+y //error los elementos no estan instanciados el de la derecha en este caso la y no lo esta
+y=1,x is 1+y //true
+1+1 =:= 1+2 //false evalua izq y der y compara resultados
+1+1 =:= 1*2 // true 
+x is o = 1,1+x =:= 1*2 // true 
