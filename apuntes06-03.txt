@@ -6,3 +6,28 @@ Aritmetica de Peano:
 ...
 
 Principio de Induccion:
+Queremos demostrar que una propiedad P es cierta para todos los elementos
+de un conjunto S.
+
+Debe:
+S tiene que ser ordenable
+Habra un primer elemento en S que cumplan la propiedad P
+
+2 reglas uqe se pueden aplicar:
+1) P(no)
+2) P(n-1) -> p(n0)
+
+
+Ejemplo demostracion 5:
+es 5 el primero? no -> si el 4 es natural el 5 tb
+es 4 el primero? no -> si el 3 es natural el 4 tb
+es 3 el primero? no -> si el 2 es natural el 3 tb
+es 2 el primero? no -> si el 1 es natural el 2 tb
+es 1 el primero? si
+
+Encadenamineto hacia atras. Y se cumple que 5 es natural.
+
+%suma (?x, ?y, ?z)
+%Es cierto cuando Z unifica con la suma
+%de X en Y en aritemtica de Peano
+suma(0,y,y) es a 0 le sumo lo que sea y da lo q sea 0+y1=y1
