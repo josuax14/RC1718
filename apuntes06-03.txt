@@ -1,0 +1,8 @@
+Aritmetica de Peano:
+0 = 0
+1 = s(0)
+2 = s(s(0))
+3 = s(s(s(0)))
+...
+
+Principio de Induccion:
