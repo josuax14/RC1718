@@ -1,0 +1,27 @@
+%resta(x,y,z)
+%es cierto cuando z unifique
+%con la resta de x menos y en A.P.
+%X tiene que ser mayor que Y
+
+%resta(X,0,X)
+%resta(X,s(Y),Z) :- resta(X,Y,s(Z))
+
+% dec2peano (+Dec, ?Peano)
+% Es cierto cuando Peano unifica
+% con el numero natural
+% equivalente a al decimal Dec
+% Ejemplo :
+% dec2peano(3,P)
+% P= s(s(s(s(0)))
+
+ 
+
+% P(n0)
+% P(n-1) -> p(n0)
+
+
+% P(0,z)
+% P(s(x),z) -> P(s,s(z))
+
+dec2peano(0,0).
+dec2peano(N-1,s(Z)) ->dec2peano(N,Z)
