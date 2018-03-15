@@ -1,0 +1,34 @@
+%divide(?X,?Y,?Z,Resto)
+% Es cierto si z unifica con la division entera entre X e Y y Resto unifica con el resto de la aritmetica de peano
+
+resta(X,0,X).
+resta(X,s(Y),s(Z)) :- resta(X,Y,s(Z)).
+
+
+divide(0,Y,0,0).
+divide(X,Y,Z,R).
+divide(X,Y,0,X) :- menor(X,Y). 
+divide(X,Y,s(Z),R) :- mayor_o_igual(X,Y) ,resta(X,Y,X2) , divide(X2,Y,Z,R).
+
+
+% Implementacion  Menor en Peano
+% Es cierto cuando X es menor que Y en aritmetica de Peano.
+
+menor(X,Y)
+menor(0,s(_)).
+menor(s(X),s(Y)) :- menor(X,Y)
+
+% Implementacion Mayor  en Peano
+%Es cierto si X es mayor que Y
+
+mayor(X,Y)
+mayor(s(_),0).
+mayor(s(X),s(Y)) :- mayor(X,Y)    
+
+% Implementacion Mayor o igual en Peano
+% Es cierto si X es mayor o igual que Y
+
+mayor_o_igual(X,Y).
+mayor_o_igual(0,0).
+mayor_o_igual(s(_),0).
+mayor_o_igual(s(X),s(Y)) :- mayor_o_igual(X,Y)
