@@ -14,16 +14,16 @@ divide(X,Y,s(Z),R) :- mayor_o_igual(X,Y) ,resta(X,Y,X2) , divide(X2,Y,Z,R).
 % Implementacion  Menor en Peano
 % Es cierto cuando X es menor que Y en aritmetica de Peano.
 
-menor(X,Y)
+menor(X,Y).
 menor(0,s(_)).
-menor(s(X),s(Y)) :- menor(X,Y)
+menor(s(X),s(Y)) :- menor(X,Y).
 
 % Implementacion Mayor  en Peano
 %Es cierto si X es mayor que Y
 
-mayor(X,Y)
+mayor(X,Y).
 mayor(s(_),0).
-mayor(s(X),s(Y)) :- mayor(X,Y)    
+mayor(s(X),s(Y)) :- mayor(X,Y). 
 
 % Implementacion Mayor o igual en Peano
 % Es cierto si X es mayor o igual que Y
@@ -31,4 +31,4 @@ mayor(s(X),s(Y)) :- mayor(X,Y)
 mayor_o_igual(X,Y).
 mayor_o_igual(0,0).
 mayor_o_igual(s(_),0).
-mayor_o_igual(s(X),s(Y)) :- mayor_o_igual(X,Y)
+mayor_o_igual(s(X),s(Y)) :- mayor_o_igual(X,Y).
