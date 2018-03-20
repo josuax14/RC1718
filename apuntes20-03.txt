@@ -1,0 +1,38 @@
+%Lista = [1,2,3]
+%[Lista] = [1,2,3]
+
+%[1,2,3]
+%[]
+%[1,'a',[1,2],X]
+%[[1],[2],[3]]
+
+%[Cabeza|Resto] = [1] o []
+
+%[C1,C2|Resto] = [1,2,3]
+
+
+% NUM_ELEM(Lista,Num)
+% Es cierto cuando num unifica con el numero de elementos de la lista
+
+num_ele([],0).
+num_ele([C|R], N2) :- num_ele(R,N) N2 is N + 1. %[C|Resto] coges la cabeza la separas del lo demas es decir la quitas.
+
+
+% reverse (?Lista, ?ListR).
+% Es cierto cuando ListR unifica con una lista
+% que contiene los mismos elementos de Lista
+% en orden inverso.
+
+reverse([],[]).
+reverse([CA|RA], R) :- reverse(RA,RB), insertar_final(CA,RB,R).
+
+%insertar_final(+E,+Lista,-R)
+%Es cierto cuando R unifica con una lista que contiene los elementos de Lista con el elemento E insertado al final
+
+insertar_final(E,[],[E]).
+insertar_final(E,[C|R],[C|AUX]) :- insertar_final(E,R,AUX).
+
+1 2 3 
+3 2 1
+ 
+
