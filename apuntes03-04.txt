@@ -51,7 +51,10 @@ ordena_insercion([CA|RE],R2) :- ordena_insercion(RE,R), inserta_en_list_ord(CA,R
 % que son menores o iguales que Elem y mayores unifica con una lista que contiene los
 % elementos de Lista que son mayores que Elem
 
-divide(E,L,[_],[_])
+divide(E,L,ME,MA).
+divide(E,[],[],[]).
+divide(E,[CA|RE],[CA|ME],MA) :- CA =< divide(E,RE,ME,MA).
+divide(E,[CA|RE],ME,[CA|MA]) :- CA =< divide(E,RE,ME,MA).
 
 
 
