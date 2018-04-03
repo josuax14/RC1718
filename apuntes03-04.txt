@@ -19,6 +19,16 @@ ordena_burbuja(Lista,R2) :-
 append (L1, [E1,E2|Resto],Lista), E1 > E2, append(L1,[E2,E1|Resto],R)
 ordena_burbuja(R,R2)
 
+% insertar_en_lista_ord(+Elem, + Lista, -ListaR).
+% es cierto cuando ListaR unifica con una lista
+% que contiene los elementos de la lista
+% ordenada Lista , con el elemento Elem insertado de forma ordenada.
+
+insertar_en_lista_ord(E,[],[E]).
+insertar_en_lista_ord(E,[CA|RE],[E,CA|RE]) :- E =< Cabeza.
+insertar_en_lista_ord(E,[CA|RE],[CA|R]) :- E > Cabeza, insertar_en_lista_ord(E,RE,R)
+
+
 % ordena (+Lista)
 % es cierto cuando lista unifica con una lista
 % que contiene sus elementos ordenados de menor a mayor. inicio pequeño
@@ -26,3 +36,22 @@ ordena_burbuja(R,R2)
 ordena([]).
 ordena([_]).
 ordena([CA1,CA2|RE]) :- CA1 =< CA2 ,ordena([CA2|RE]).
+
+% ordena_insercion(+Lista, -ListaR).
+% es cierto cuando ListaR unifica con una lista
+% que contiene los mismos elementos que Lista
+% ordenados de menor a  mayor
+
+ordena_insercion([],[]).
+ordena_insercion([CA|RE],R2) :- ordena_insercion(RE,R), inserta_en_list_ord(CA,R,R2).
+
+% divide(+Elem, + Lista, - Menores, -Mayores)
+
+% es cierto cuando Menores unifica con una lista que contiene los elementos de Lista
+% que son menores o iguales que Elem y mayores unifica con una lista que contiene los
+% elementos de Lista que son mayores que Elem
+
+divide(E,L,[_],[_])
+
+
+
