@@ -1,0 +1,28 @@
+% concatena (+Lista1 , +List2 , -ListR).
+% es cierto cuando ListaR unifica con una
+% lista que contiene los elementos de la
+% lista List1 en el mismo orden y seguidos
+% de los elementos de la lista List2 en el
+% mismo orden.
+
+Concatena([],L2,L2).
+Concatena([CA|RE],L2,[CA|R] ) :- concatena(RE,L2,R).
+% tenemos que probar con l1 vacia pq si es l2 vacia tenemso el hueco en medio de los arrays.
+
+% ordena_burbuja(+Lista, - ListaR).
+% es cierto cuando ListaR unifica con una
+% lista que contiene los mismos elementos que
+% lista ordenada de menor a mayor
+
+ordena_burbuja(Lista,Lista) :- ordena(Lista).
+ordena_burbuja(Lista,R2) :-
+append (L1, [E1,E2|Resto],Lista), E1 > E2, append(L1,[E2,E1|Resto],R)
+ordena_burbuja(R,R2)
+
+% ordena (+Lista)
+% es cierto cuando lista unifica con una lista
+% que contiene sus elementos ordenados de menor a mayor. inicio pequeño
+
+ordena([]).
+ordena([_]).
+ordena([CA1,CA2|RE]) :- CA1 =< CA2 ,ordena([CA2|RE]).
