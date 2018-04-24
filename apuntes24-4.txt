@@ -1,0 +1,21 @@
+% en inorder del arbol a
+% Hi , Raiz , Hd
+
+arbol1
+(
+	a('+',a(1,nil,nil),a('*',a(2,nil,nil),a(3,nil,nil))).
+)
+
+%IN-ORDER
+
+inorder(nil,[])
+inorder(a(E,HI,HD,R) :- inorder(HI,RI),inorder(HD,RD),append(RI,[E|RD],R).
+
+%POST-ORDER
+
+post_order(nil,[]).
+post_order(a(E,HI,HD),R) :- post_order(HI,RI),post_order(HD,RD), append([RI,Rd,[E]],R).
+
+%ANCHURA
+
+anchura()
