@@ -1,0 +1,31 @@
+camino(G,Ini,Fin,Visitados,[a(Ini,Fin)]) :- conectados(G,Ini,Fin),
+\+ member(a(Ini,Fin),Visitados).
+
+1)[tmp|visitado]
+2)[b(ini,tmp)|visitado]
+3)[a(ini.,tmp),b(tmp,ini)|visitado] //tipos para grafos
+
+% funcion pra encontrar todos los ciclos de un grafo tanto para un fragao dirigido como para uno no dirigido
+
+%ciclos(+G,-C)
+%Dar todos los ciclos de un grafo por unificacion
+ciclos(G,C) :- camino(G,ini,ini,[],C).
+
+
+Variantes:
+
+1.Grafo Dirigido
+	1.1 Visitados como lista de vertices
+	1.2 Visitados como lista de aristas
+	1.3 Camino como lista de vertices
+	1.4 Camino como lista de aristas
+
+2.Grafo no Dirigido
+	2.1 Visitados como lista de vertices
+	2.2 Visitados como lista de aristas
+	2.3 Camino como lista de vertices
+	2.4 Camino como lista de aristas
+
+
+
+
